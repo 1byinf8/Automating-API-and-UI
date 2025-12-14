@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.57.0-focal
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    environment:
+      - BASE_URL=${BASE_URL}
+      - TEST_USERNAME=${TEST_USERNAME}
+      - TEST_PASSWORD=${TEST_PASSWORD}
+      - HEADLESS=true
+      - CI=true
+    command: npm test
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
