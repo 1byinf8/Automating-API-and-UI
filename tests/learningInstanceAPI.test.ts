@@ -4,8 +4,8 @@ import { TestHelpers } from '../utils/testHelpers';
 test.describe('Learning Instance API', () => {
   let instanceId: string;
 
-  test.beforeAll(async ({ apiClient }) => {
-    // Login before all tests
+  test.beforeEach(async ({ apiClient }) => {
+    // Login before each test to ensure fresh token/session
     await apiClient.login(
       process.env.TEST_USERNAME!,
       process.env.TEST_PASSWORD!

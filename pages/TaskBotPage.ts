@@ -1,7 +1,7 @@
 import { Page, expect } from '@playwright/test';
 
 export class TaskBotPage {
-  constructor(private page: Page) {}
+  constructor(public page: Page) {}
 
   taskName = 'input[name="name"]';
   createBtn = 'button:has-text("Create")';
@@ -19,6 +19,11 @@ export class TaskBotPage {
     await this.page.dblclick(this.messageBoxItem);
 
     await expect(this.page.locator(this.messageBoxItem)).toBeVisible();
+  }
+
+  async searchAction(actionName: string) {
+    await this.page.fill(this.messageBoxSearch, actionName);
+    await this.page.press(this.messageBoxSearch, 'Enter');
   }
 
   async saveConfig() {

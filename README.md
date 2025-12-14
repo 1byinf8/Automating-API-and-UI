@@ -2,7 +2,7 @@
 
 A production-ready test automation framework using Playwright with TypeScript, implementing Page Object Model (POM) and best practices for E2E and API testing.
 
-## 🚀 Features
+## Features
 
 - **Page Object Model (POM)** - Maintainable and scalable test structure
 - **TypeScript** - Type-safe code with excellent IDE support
@@ -15,12 +15,12 @@ A production-ready test automation framework using Playwright with TypeScript, i
 - **Environment Configuration** - Multiple environment support
 - **Code Quality** - ESLint, Prettier, and TypeScript strict mode
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js >= 18.0.0
 - npm >= 9.0.0
 
-## 🛠️ Installation
+## Installation
 
 ```bash
 # Clone the repository
@@ -59,7 +59,7 @@ Configure browsers in `playwright.config.ts`:
 - WebKit
 - Mobile Chrome
 
-## 🧪 Running Tests
+## Running Tests
 
 ```bash
 # Run all tests
@@ -89,7 +89,7 @@ npm run test:parallel
 npm run test:serial
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 automation-assignment/
@@ -122,7 +122,7 @@ automation-assignment/
 └── README.md                   # This file
 ```
 
-## 🎯 Test Scenarios
+## Test Scenarios
 
 ### UI Tests
 
@@ -151,7 +151,7 @@ automation-assignment/
    - List all instances
    - Error handling
 
-## 📊 Reporting
+## Reporting
 
 ```bash
 # View HTML report
@@ -162,7 +162,7 @@ npm run report
 # - test-results/ (JSON, JUnit XML)
 ```
 
-## 🔧 Code Quality
+## Code Quality
 
 ```bash
 # Run linter
@@ -181,7 +181,7 @@ npm run format:check
 npm run typecheck
 ```
 
-## 🚀 CI/CD
+## CI/CD
 
 The project includes a GitHub Actions workflow that:
 - Runs tests on multiple browsers
@@ -189,7 +189,7 @@ The project includes a GitHub Actions workflow that:
 - Generates and uploads test reports
 - Runs on push, PR, and scheduled intervals
 
-## 🏗️ Best Practices Implemented
+## Best Practices Implemented
 
 1. **Page Object Model** - Separation of test logic and page elements
 2. **DRY Principle** - Reusable components and utilities
@@ -202,7 +202,7 @@ The project includes a GitHub Actions workflow that:
 9. **Documentation** - Clear inline comments
 10. **Version Control** - Proper .gitignore configuration
 
-## 🐛 Debugging
+## Debugging
 
 ```bash
 # Run in debug mode
@@ -215,7 +215,7 @@ npx playwright test --debug
 npm run codegen
 ```
 
-## 📝 Writing New Tests
+## Writing New Tests
 
 1. Create page objects in `pages/` directory
 2. Add test fixtures if needed in `fixtures/`
@@ -242,7 +242,7 @@ test.describe('Feature Name', () => {
 });
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -250,14 +250,14 @@ test.describe('Feature Name', () => {
 4. Run tests and code quality checks
 5. Submit a pull request
 
-## 📄 License
+## License
 
 ISC
 
-## 🆘 Support
+## Support
 
 For issues and questions, please open an issue in the repository.
 
 ---
 
-**Happy Testing! 🎉**
+**Happy Testing!**
