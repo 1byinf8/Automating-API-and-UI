@@ -39,7 +39,3 @@ npx playwright test
 * Login API
 * Create Learning Instance API
 * Validate response fields
-
-```
-
----
