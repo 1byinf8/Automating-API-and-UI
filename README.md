@@ -1,5 +1,4 @@
 
-````md
 # Automation Assignment — Playwright + POM
 
 ## Framework Used
