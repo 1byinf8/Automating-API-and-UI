@@ -48,7 +48,7 @@ export const test = base.extend<TestFixtures>({
   },
 
   // Authenticated page fixture - auto-login before each test
-  authenticatedPage: async ({ page, loginPage }, use) => {
+  authenticatedPage: async ({ loginPage }, use) => {
     await loginPage.goto();
     await loginPage.loginWithValidation(
       process.env.TEST_USERNAME!,

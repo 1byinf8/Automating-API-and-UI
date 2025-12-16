@@ -3,7 +3,6 @@ import { LoginPage } from '../pages/LoginPage';
 import { DashboardPage } from '../pages/DashboardPage';
 import { FormBuilderPage } from '../pages/FormBuilderPage';
 import { TestHelpers } from '../utils/testHelpers';
-import * as path from 'path';
 
 test('Create Form With Upload', async ({ page }) => {
   const login = new LoginPage(page);

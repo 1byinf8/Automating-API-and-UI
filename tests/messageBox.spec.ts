@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/test.fixtures';
 import { TestHelpers } from '../utils/testHelpers';
 
 test.describe('Message Box Task Creation', () => {
-  test.beforeEach(async ({ authenticatedPage }) => {
+  test.beforeEach(async () => {
     // Auto-login handled by fixture
   });
 
@@ -68,12 +68,11 @@ test.describe('Message Box Task Creation', () => {
 });
 
 test.describe('Message Box Task - Error Scenarios', () => {
-  test.beforeEach(async ({ authenticatedPage }) => {});
+  test.beforeEach(async () => {});
 
   test('should handle network errors gracefully', async ({
     page,
     dashboardPage,
-    taskBotPage,
   }) => {
     // Simulate offline mode
     await page.context().setOffline(true);
