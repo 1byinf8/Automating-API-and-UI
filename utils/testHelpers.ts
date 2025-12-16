@@ -3,25 +3,16 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export class TestHelpers {
-  /**
-   * Generate random string
-   */
   static generateRandomString(length: number = 10): string {
     return Math.random().toString(36).substring(2, length + 2);
   }
 
-  /**
-   * Generate unique timestamp-based name
-   */
   static generateUniqueName(prefix: string = 'test'): string {
     const timestamp = Date.now();
     const random = this.generateRandomString(5);
     return `${prefix}_${timestamp}_${random}`;
   }
 
-  /**
-   * Wait for a specific condition
-   */
   static async waitForCondition(
     condition: () => Promise<boolean>,
     timeout: number = 10000,
@@ -39,16 +30,10 @@ export class TestHelpers {
     return false;
   }
 
-  /**
-   * Sleep for specified milliseconds
-   */
   static async sleep(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  /**
-   * Retry operation with exponential backoff
-   */
   static async retry<T>(
     operation: () => Promise<T>,
     maxRetries: number = 3,
@@ -65,16 +50,10 @@ export class TestHelpers {
     throw new Error('Retry failed');
   }
 
-  /**
-   * Get file path relative to project root
-   */
   static getFilePath(...segments: string[]): string {
     return path.join(process.cwd(), ...segments);
   }
 
-  /**
-   * Create test data file
-   */
   static createTestFile(filename: string, content: string): string {
     const filePath = this.getFilePath('test-data', filename);
     const dir = path.dirname(filePath);
@@ -87,9 +66,6 @@ export class TestHelpers {
     return filePath;
   }
 
-  /**
-   * Clean up test files
-   */
   static cleanupTestFiles(directory: string = 'test-data'): void {
     const dirPath = this.getFilePath(directory);
     
@@ -98,16 +74,10 @@ export class TestHelpers {
     }
   }
 
-  /**
-   * Format date for testing
-   */
   static formatDate(date: Date = new Date()): string {
     return date.toISOString().split('T')[0];
   }
 
-  /**
-   * Parse JSON safely
-   */
   static safeJsonParse<T>(json: string, defaultValue: T): T {
     try {
       return JSON.parse(json);
@@ -116,9 +86,6 @@ export class TestHelpers {
     }
   }
 
-  /**
-   * Take screenshot with timestamp
-   */
   static async takeTimestampedScreenshot(page: Page, name: string): Promise<string> {
     const timestamp = Date.now();
     const filename = `${name}_${timestamp}.png`;
@@ -133,23 +100,14 @@ export class TestHelpers {
     return filepath;
   }
 
-  /**
-   * Get environment variable with fallback
-   */
   static getEnv(key: string, fallback: string = ''): string {
     return process.env[key] || fallback;
   }
 
-  /**
-   * Check if running in CI
-   */
   static isCI(): boolean {
     return process.env.CI === 'true';
   }
 
-  /**
-   * Sanitize string for filename
-   */
   static sanitizeFilename(str: string): string {
     return str.replace(/[^a-z0-9]/gi, '_').toLowerCase();
   }

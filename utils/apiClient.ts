@@ -23,7 +23,6 @@ export class ApiClient {
     });
   }
 
-  // ✅ REQUIRED by your tests
   async login(username: string, password: string) {
     if (!this.api) throw new Error('API client not initialized');
 

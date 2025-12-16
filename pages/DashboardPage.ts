@@ -8,7 +8,6 @@ export class DashboardPage {
   }
 
   private getAutomationElement(): Locator {
-    // ✅ ONLY selector that actually exists in DOM
     return this.page.getByText('Automation', { exact: true });
   }
 

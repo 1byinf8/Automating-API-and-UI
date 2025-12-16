@@ -1,24 +1,15 @@
 import { test, expect } from '@playwright/test';
 
-/**
- * Debug test to help identify correct selectors and authentication flow
- * Run with: npx playwright test tests/debug.spec.ts --headed --debug
- */
-
 test.describe('Debug Tests', () => {
   test('Inspect page after login', async ({ page }) => {
     console.log('Starting debug test...');
     
-    // Navigate to login page
     await page.goto('/');
     await page.waitForLoadState('domcontentloaded');
     
     console.log('Current URL:', page.url());
-    
-    // Take screenshot of login page
     await page.screenshot({ path: 'debug-1-login-page.png', fullPage: true });
     
-    // Fill login form
     const username = process.env.TEST_USERNAME || '';
     const password = process.env.TEST_PASSWORD || '';
     
@@ -28,7 +19,6 @@ test.describe('Debug Tests', () => {
     
     console.log('Attempting login with username:', username);
     
-    // Try different login field selectors
     const usernameSelectors = ['#username', 'input[name="username"]', 'input[type="text"]'];
     const passwordSelectors = ['#password', 'input[name="password"]', 'input[type="password"]'];
     
@@ -60,7 +50,6 @@ test.describe('Debug Tests', () => {
       throw new Error('Could not find login form fields');
     }
     
-    // Click login button
     const loginButtonSelectors = [
       'button[type="submit"]',
       'button:has-text("Log in")',
@@ -85,33 +74,26 @@ test.describe('Debug Tests', () => {
       throw new Error('Could not find login button');
     }
     
-    // Wait for navigation
     await page.waitForLoadState('networkidle', { timeout: 30000 });
-    await page.waitForTimeout(5000); // Extra wait for any JS to finish
+    await page.waitForTimeout(5000);
     
     console.log('URL after login:', page.url());
-    
-    // Take screenshot after login
     await page.screenshot({ path: 'debug-2-after-login.png', fullPage: true });
     
-    // Check if we're still on login page
     const currentUrl = page.url();
     if (currentUrl.includes('login') || currentUrl.includes('signin')) {
       console.error('WARNING: Still on login page! Authentication may have failed.');
       
-      // Check for error messages
       const errorSelectors = ['.error', '.error-message', '[role="alert"]', '.alert-danger'];
       for (const selector of errorSelectors) {
         try {
           const errorText = await page.textContent(selector, { timeout: 1000 });
           console.error('Error message found:', errorText);
         } catch {
-          // No error with this selector
         }
       }
     }
     
-    // Log all visible buttons and links
     console.log('\n=== Clickable Elements ===');
     const clickableElements = await page.$$('button:visible, a:visible, [role="button"]:visible');
     console.log(`Found ${clickableElements.length} clickable elements`);
@@ -124,11 +106,9 @@ test.describe('Debug Tests', () => {
         const classes = await el.evaluate(e => e.className);
         console.log(`${i + 1}. ${tag} [${classes}]: "${text?.trim()}"`);
       } catch {
-        // Skip elements that are no longer available
       }
     }
     
-    // Look for specific elements we need
     console.log('\n=== Looking for key elements ===');
     const keySelectors = [
       'text=Automation',
@@ -149,9 +129,7 @@ test.describe('Debug Tests', () => {
       }
     }
     
-    // Pause for manual inspection
     console.log('\n=== Test paused for manual inspection ===');
-    console.log('Press Resume button in Playwright Inspector to continue...');
     await page.pause();
   });
 
@@ -165,7 +143,6 @@ test.describe('Debug Tests', () => {
     console.log('Base URL:', baseURL);
     console.log('Username:', username);
     
-    // Try different authentication endpoints
     const authEndpoints = [
       '/v1/authentication',
       '/api/v1/authentication',

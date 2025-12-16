@@ -2,18 +2,14 @@ import { test, expect } from '../fixtures/test.fixtures';
 import { TestHelpers } from '../utils/testHelpers';
 
 test.describe('Message Box Task Creation', () => {
-  test.beforeEach(async () => {
-    // Auto-login handled by fixture
-  });
+  test.beforeEach(async () => {});
 
   test('should create a message box task successfully', async ({
     dashboardPage,
     taskBotPage,
   }) => {
-    // Arrange
     const taskName = TestHelpers.generateUniqueName('MessageTask');
 
-    // Act
     await test.step('Navigate to Automation section', async () => {
       await dashboardPage.goToAutomation();
     });
@@ -34,21 +30,15 @@ test.describe('Message Box Task Creation', () => {
       await taskBotPage.saveConfig();
     });
 
-    // Assert
     await test.step('Verify task was created', async () => {
       await expect(taskBotPage.page).toHaveURL(/.*task.*/);
-      // Add more specific assertions based on your application
     });
   });
 
   test('should validate required fields', async ({ dashboardPage, taskBotPage }) => {
     await dashboardPage.goToAutomation();
     await dashboardPage.openTaskBotCreate();
-
-    // Try to create without name
     await taskBotPage.createTaskBot('');
-
-    // Verify validation message appears
     await expect(taskBotPage.page.locator('.error-message')).toBeVisible();
   });
 
@@ -58,11 +48,7 @@ test.describe('Message Box Task Creation', () => {
     await dashboardPage.goToAutomation();
     await dashboardPage.openTaskBotCreate();
     await taskBotPage.createTaskBot(taskName);
-
-    // Search for non-existent action
     await taskBotPage.searchAction('NonExistentAction');
-    
-    // Verify no results shown
     await expect(taskBotPage.page.locator('.no-results')).toBeVisible();
   });
 });
@@ -74,15 +60,9 @@ test.describe('Message Box Task - Error Scenarios', () => {
     page,
     dashboardPage,
   }) => {
-    // Simulate offline mode
     await page.context().setOffline(true);
-
     await dashboardPage.goToAutomation();
-    
-    // Verify error handling
     await expect(page.locator('.network-error')).toBeVisible();
-
-    // Restore connection
     await page.context().setOffline(false);
   });
 });
