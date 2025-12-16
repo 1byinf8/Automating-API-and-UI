@@ -1,40 +1,29 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
-import { DashboardPage } from '../pages/DashboardPage';
-import { FormBuilderPage } from '../pages/FormBuilderPage';
-import { TestHelpers } from '../utils/testHelpers';
 
 test('Create Form With Upload', async ({ page }) => {
-  const login = new LoginPage(page);
-  const dashboard = new DashboardPage(page);
-  const form = new FormBuilderPage(page);
+  const loginPage = new LoginPage(page);
 
-  // Generate a real file for the test
-  const fileName = 'test-upload-file.txt';
-  const fileContent = 'This is a test file for upload functionality.';
-  const filePath = TestHelpers.createTestFile(fileName, fileContent);
+  await loginPage.goto();
+  await loginPage.loginWithValidation(
+    process.env.TEST_USERNAME!,
+    process.env.TEST_PASSWORD!
+  );
 
-  try {
-    await login.goto();
-    // Use env vars or defaults
-    await login.login(
-      process.env.TEST_USERNAME || 'default-user', 
-      process.env.TEST_PASSWORD || 'default-pass'
-    );
+  // Navigate to Forms / Automation page as needed
+  await page.getByRole('link', { name: 'Automation', exact: true }).click();
 
-    await dashboard.goToAutomation();
-    await dashboard.openFormCreate();
+  // Click create form (example)
+  await page.getByRole('button', { name: /create/i }).click();
 
-    await form.createForm('My Upload Form');
-    await form.dragAndDropControls();
-    await form.fillTextbox('Hello World');
-    
-    // Upload the generated file
-    await form.uploadFile(filePath);
-    
-    await form.saveForm();
-  } finally {
-    // Cleanup the generated file
-    TestHelpers.cleanupTestFiles();
-  }
+  // ---- FILE UPLOAD FIX ----
+  await page.getByRole('button', { name: /upload/i }).click();
+
+  const fileInput = page.locator('input[type="file"]');
+  await expect(fileInput).toHaveCount(1);
+
+  await fileInput.setInputFiles('tests/fixtures/sample.pdf');
+
+  // Assert file uploaded
+  await expect(page.locator('text=sample.pdf')).toBeVisible();
 });

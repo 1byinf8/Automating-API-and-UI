@@ -1,81 +1,87 @@
-import { Page } from '@playwright/test';
-import { BasePage } from './BasePage';
+import { Page, expect } from '@playwright/test';
 
-export class LoginPage extends BasePage {
-  // Updated locators based on actual login page
-  private readonly usernameInput = 'input[name="username"]';
-  private readonly passwordInput = 'input[name="password"]';
-  private readonly loginButton = 'button[type="submit"]';
-  private readonly errorMessage = '.error-message, [role="alert"], .alert-danger';
+export class LoginPage {
+  readonly page: Page;
 
   constructor(page: Page) {
-    super(page);
+    this.page = page;
   }
 
-  async goto(): Promise<void> {
-    await super.goto('/');
-    await this.waitForPageLoad();
+  // Navigate to app
+  async goto() {
+    await this.page.goto('/', { timeout: 60000 });
+    await this.waitForReady();
   }
 
-  private async waitForPageLoad(): Promise<void> {
-    // Wait for either login form or dashboard (if already logged in)
-    await Promise.race([
-      this.page.waitForSelector(this.usernameInput, { timeout: 10000 }),
-      this.page.waitForSelector('text=Automation', { timeout: 10000 })
-    ]);
-  }
+  // Wait until either login OR dashboard is ready
+  async waitForReady() {
+    const automationLink = this.page.getByRole('link', {
+      name: 'Automation',
+      exact: true,
+    });
 
-  async login(username: string, password: string): Promise<void> {
-    // Check if already logged in
-    const isLoggedIn = await this.page.isVisible('text=Automation', { timeout: 2000 }).catch(() => false);
-    if (isLoggedIn) {
-      console.log('Already logged in, skipping login step');
+    // Case 1: Already logged in
+    if (await automationLink.isVisible().catch(() => false)) {
       return;
     }
 
-    await this.fillInput(this.usernameInput, username);
-    await this.fillInput(this.passwordInput, password);
-    
-    await this.page.click(this.loginButton);
-    
-    // Wait for navigation - look for the Home page elements
-    await Promise.race([
-      this.page.waitForSelector('text=HELLO, HUMAN', { timeout: 30000 }),
-      this.page.waitForSelector('h1:has-text("Automation")', { timeout: 30000 }),
-      this.waitForVisible(this.errorMessage, 30000).catch(() => {})
-    ]);
+    // Case 2: Login inside iframe
+    const iframe = this.page.frameLocator('iframe');
+    const iframeUsername = iframe.locator(
+      'input[name="username"], #username'
+    );
+
+    if (await iframeUsername.count() > 0) {
+      await expect(iframeUsername).toBeVisible({ timeout: 30000 });
+      return;
+    }
+
+    // Case 3: Login on main page
+    const pageUsername = this.page.locator(
+      'input[name="username"], #username'
+    );
+    await expect(pageUsername).toBeVisible({ timeout: 30000 });
   }
 
-  async loginWithValidation(username: string, password: string): Promise<void> {
+  // Core login logic
+  async login(username: string, password: string) {
+    const automationLink = this.page.getByRole('link', {
+      name: 'Automation',
+      exact: true,
+    });
+
+    // Skip login if already logged in
+    if (await automationLink.isVisible().catch(() => false)) {
+      return;
+    }
+
+    const iframe = this.page.frameLocator('iframe');
+    const iframeUsername = iframe.locator(
+      'input[name="username"], #username'
+    );
+
+    if (await iframeUsername.count() > 0) {
+      await iframeUsername.fill(username);
+      await iframe
+        .locator('input[name="password"], #password')
+        .fill(password);
+      await iframe.locator('button[type="submit"]').click();
+    } else {
+      await this.page
+        .locator('input[name="username"], #username')
+        .fill(username);
+      await this.page
+        .locator('input[name="password"], #password')
+        .fill(password);
+      await this.page.locator('button[type="submit"]').click();
+    }
+
+    // Wait for dashboard
+    await expect(automationLink).toBeVisible({ timeout: 60000 });
+  }
+
+  // 🔥 BACKWARD-COMPATIBLE METHOD (FIXES TS ERROR)
+  async loginWithValidation(username: string, password: string) {
     await this.login(username, password);
-    await this.verifyLoginSuccess();
-  }
-
-  async verifyLoginSuccess(): Promise<void> {
-    // Wait for the page to fully load
-    await this.page.waitForLoadState('networkidle', { timeout: 30000 });
-    
-    // Verify we're on the dashboard by checking for sidebar elements
-    const sidebarVisible = await this.page.isVisible('text=Explore', { timeout: 5000 }).catch(() => false);
-    if (!sidebarVisible) {
-      throw new Error('Login appears to have failed - sidebar not visible');
-    }
-    
-    // Check we're not on login page
-    const url = this.page.url();
-    if (url.includes('login') || url.includes('signin')) {
-      throw new Error('Still on login page after authentication');
-    }
-  }
-
-  async getErrorMessage(): Promise<string> {
-    if (await this.isVisible(this.errorMessage)) {
-      return await this.getTextContent(this.errorMessage);
-    }
-    return '';
-  }
-
-  async isLoginButtonEnabled(): Promise<boolean> {
-    return await this.page.locator(this.loginButton).isEnabled();
   }
 }

@@ -1,205 +1,84 @@
-import { APIRequestContext, request, expect } from '@playwright/test';
-import { Logger } from './logger';
+import { APIRequestContext, request } from '@playwright/test';
 
-export interface ApiResponse<T = any> {
+type ApiResponse<T = any> = {
   status: number;
   body: T;
-  headers: Record<string, string>;
-}
+};
 
 export class ApiClient {
-  private api!: APIRequestContext;
-  private token: string | null = null;
-  private logger = new Logger('ApiClient');
+  private api: APIRequestContext | null = null;
+  private baseUrl: string;
 
-  constructor(private baseURL?: string) {}
+  constructor(baseUrl?: string) {
+    this.baseUrl =
+      baseUrl || 'https://community.cloud.automationanywhere.digital';
+  }
 
-  /**
-   * Initialize API context
-   */
-  async init(): Promise<void> {
+  async init() {
     this.api = await request.newContext({
-      baseURL: this.baseURL || process.env.API_BASE_URL || process.env.BASE_URL,
+      baseURL: this.baseUrl,
       extraHTTPHeaders: {
         'Content-Type': 'application/json',
       },
-      timeout: 30000,
     });
-    this.logger.info('API client initialized');
   }
 
-  /**
-   * Login and store authentication token
-   */
-  async login(username: string, password: string): Promise<string> {
-    try {
-      this.logger.info(`Attempting login for user: ${username}`);
-      
-      const response = await this.api.post('/api/login', {
-        data: { username, password },
-      });
+  // ✅ REQUIRED by your tests
+  async login(username: string, password: string) {
+    if (!this.api) throw new Error('API client not initialized');
 
-      expect(response.status()).toBe(200);
+    const response = await this.api.post('/api/login', {
+      data: { username, password },
+    });
 
-      const body = await response.json();
-      this.token = body.token;
-
-      this.logger.info('Login successful');
-      return this.token!;
-    } catch (error) {
-      this.logger.error('Login failed', error);
-      throw error;
+    if (response.status() !== 200) {
+      throw new Error(`Login failed with status ${response.status()}`);
     }
   }
 
-  /**
-   * Build authentication headers
-   */
-  private authHeaders(): Record<string, string> {
-    return this.token ? { Authorization: `Bearer ${this.token}` } : {};
+  async get(url: string, options?: any): Promise<ApiResponse> {
+    if (!this.api) throw new Error('API client not initialized');
+
+    const res = await this.api.get(url, options);
+    return {
+      status: res.status(),
+      body: await res.json().catch(() => ({})),
+    };
   }
 
-  /**
-   * Generic GET request with error handling
-   */
-  async get<T = any>(endpoint: string, options?: { params?: Record<string, any> }): Promise<ApiResponse<T>> {
-    try {
-      this.logger.info(`GET ${endpoint}`);
-      
-      const response = await this.api.get(endpoint, {
-        headers: this.authHeaders(),
-        params: options?.params,
-      });
+  async post(url: string, data?: any): Promise<ApiResponse> {
+    if (!this.api) throw new Error('API client not initialized');
 
-      return await this.handleResponse<T>(response);
-    } catch (error) {
-      this.logger.error(`GET ${endpoint} failed`, error);
-      throw error;
+    const res = await this.api.post(url, { data });
+    return {
+      status: res.status(),
+      body: await res.json().catch(() => ({})),
+    };
+  }
+
+  async put(url: string, data?: any): Promise<ApiResponse> {
+    if (!this.api) throw new Error('API client not initialized');
+
+    const res = await this.api.put(url, { data });
+    return {
+      status: res.status(),
+      body: await res.json().catch(() => ({})),
+    };
+  }
+
+  async delete(url: string): Promise<ApiResponse> {
+    if (!this.api) throw new Error('API client not initialized');
+
+    const res = await this.api.delete(url);
+    return {
+      status: res.status(),
+      body: await res.json().catch(() => ({})),
+    };
+  }
+
+  async dispose() {
+    if (this.api) {
+      await this.api.dispose();
     }
-  }
-
-  /**
-   * Generic POST request with error handling
-   */
-  async post<T = any>(endpoint: string, data?: any): Promise<ApiResponse<T>> {
-    try {
-      this.logger.info(`POST ${endpoint}`);
-      
-      const response = await this.api.post(endpoint, {
-        headers: this.authHeaders(),
-        data,
-      });
-
-      return await this.handleResponse<T>(response);
-    } catch (error) {
-      this.logger.error(`POST ${endpoint} failed`, error);
-      throw error;
-    }
-  }
-
-  /**
-   * Generic PUT request with error handling
-   */
-  async put<T = any>(endpoint: string, data?: any): Promise<ApiResponse<T>> {
-    try {
-      this.logger.info(`PUT ${endpoint}`);
-      
-      const response = await this.api.put(endpoint, {
-        headers: this.authHeaders(),
-        data,
-      });
-
-      return await this.handleResponse<T>(response);
-    } catch (error) {
-      this.logger.error(`PUT ${endpoint} failed`, error);
-      throw error;
-    }
-  }
-
-  /**
-   * Generic PATCH request with error handling
-   */
-  async patch<T = any>(endpoint: string, data?: any): Promise<ApiResponse<T>> {
-    try {
-      this.logger.info(`PATCH ${endpoint}`);
-      
-      const response = await this.api.patch(endpoint, {
-        headers: this.authHeaders(),
-        data,
-      });
-
-      return await this.handleResponse<T>(response);
-    } catch (error) {
-      this.logger.error(`PATCH ${endpoint} failed`, error);
-      throw error;
-    }
-  }
-
-  /**
-   * Generic DELETE request with error handling
-   */
-  async delete<T = any>(endpoint: string): Promise<ApiResponse<T>> {
-    try {
-      this.logger.info(`DELETE ${endpoint}`);
-      
-      const response = await this.api.delete(endpoint, {
-        headers: this.authHeaders(),
-      });
-
-      return await this.handleResponse<T>(response);
-    } catch (error) {
-      this.logger.error(`DELETE ${endpoint} failed`, error);
-      throw error;
-    }
-  }
-
-  /**
-   * Handle API response
-   */
-  private async handleResponse<T>(response: any): Promise<ApiResponse<T>> {
-    const status = response.status();
-    const headers = response.headers();
-    
-    let body: T;
-    try {
-      body = await response.json();
-    } catch {
-      body = await response.text() as T;
-    }
-
-    this.logger.info(`Response status: ${status}`);
-
-    return { status, body, headers };
-  }
-
-  /**
-   * Set authentication token manually
-   */
-  setToken(token: string): void {
-    this.token = token;
-    this.logger.info('Token updated manually');
-  }
-
-  /**
-   * Get current authentication token
-   */
-  getToken(): string | null {
-    return this.token;
-  }
-
-  /**
-   * Clear authentication token
-   */
-  clearToken(): void {
-    this.token = null;
-    this.logger.info('Token cleared');
-  }
-
-  /**
-   * Dispose API context
-   */
-  async dispose(): Promise<void> {
-    await this.api.dispose();
-    this.logger.info('API client disposed');
   }
 }

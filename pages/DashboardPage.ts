@@ -1,48 +1,32 @@
-import { Page } from '@playwright/test';
+import { Page, expect, Locator } from '@playwright/test';
 
 export class DashboardPage {
-  constructor(private page: Page) {}
+  readonly page: Page;
 
-  // Updated selectors based on actual UI
-  automationMenu = '[href*="/automation"]';
-  createButton = 'button:has-text("Create")';
-  createBotButton = 'button:has-text("Create a bot")';
-  
+  constructor(page: Page) {
+    this.page = page;
+  }
+
+  private getAutomationElement(): Locator {
+    // ✅ ONLY selector that actually exists in DOM
+    return this.page.getByText('Automation', { exact: true });
+  }
+
   async goToAutomation() {
-    // Click the Automation menu item in the left sidebar
-    await this.page.click(this.automationMenu, { timeout: 10000 });
-    await this.page.waitForLoadState('networkidle');
-    
-    // Wait for the Automation page heading to appear
-    await this.page.waitForSelector('h1:has-text("Automation")', { timeout: 10000 });
+    const automation = this.getAutomationElement();
+
+    await expect(automation).toBeVisible({ timeout: 60000 });
+    await automation.click();
+
+    await expect(this.page).toHaveURL(/bots\/repository/);
   }
 
   async openTaskBotCreate() {
-    // Look for "Create a bot..." button on the home page
-    // or the "+ Create" button on the Automation page
-    
-    // Try the home page button first
-    const createBotVisible = await this.page.isVisible('button:has-text("Create a bot")', { timeout: 5000 }).catch(() => false);
-    
-    if (createBotVisible) {
-      await this.page.click('button:has-text("Create a bot")');
-    } else {
-      // Otherwise use the Create dropdown on Automation page
-      await this.page.click('button:has-text("Create")');
-      await this.page.waitForTimeout(1000);
-      // Select bot option from dropdown
-      await this.page.click('text=Bot');
-    }
-    
-    await this.page.waitForLoadState('networkidle');
-  }
+    const createBotBtn = this.page.getByRole('button', {
+      name: /create a bot/i,
+    });
 
-  async openFormCreate() {
-    // Click Create button
-    await this.page.click('button:has-text("Create")');
-    await this.page.waitForTimeout(1000);
-    // Select Form option from dropdown
-    await this.page.click('text=Form');
-    await this.page.waitForLoadState('networkidle');
+    await expect(createBotBtn).toBeVisible({ timeout: 60000 });
+    await createBotBtn.click();
   }
 }
