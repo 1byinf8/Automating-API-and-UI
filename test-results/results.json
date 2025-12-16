@@ -1,0 +1,794 @@
+{
+  "config": {
+    "configFile": "/Users/1byinf8/BOOM/automation-assignment/playwright.config.ts",
+    "rootDir": "/Users/1byinf8/BOOM/automation-assignment/tests",
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/junit.xml"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/1byinf8/BOOM/automation-assignment/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/1byinf8/BOOM/automation-assignment/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "debug.test.ts",
+      "file": "debug.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Debug Tests",
+          "file": "debug.test.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Inspect page after login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 33883,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Starting debug test...\n"
+                        },
+                        {
+                          "text": "Current URL: https://community.cloud.automationanywhere.digital/#/login?next=/index\n"
+                        },
+                        {
+                          "text": "Attempting login with username: kashyapsatwik29@gmail.com\n"
+                        },
+                        {
+                          "text": "Username filled with selector: input[name=\"username\"]\n"
+                        },
+                        {
+                          "text": "Password filled with selector: input[name=\"password\"]\n"
+                        },
+                        {
+                          "text": "Login button clicked with selector: button[type=\"submit\"]\n"
+                        },
+                        {
+                          "text": "URL after login: https://community.cloud.automationanywhere.digital/#/home\n"
+                        },
+                        {
+                          "text": "\n=== Clickable Elements ===\n"
+                        },
+                        {
+                          "text": "Found 26 clickable elements\n"
+                        },
+                        {
+                          "text": "1. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide pathfinder-items__item-button--is_current pathfinder-button--is_selected]: \"Explore\"\n"
+                        },
+                        {
+                          "text": "2. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Home\"\n"
+                        },
+                        {
+                          "text": "3. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Automation\"\n"
+                        },
+                        {
+                          "text": "4. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"AI\"\n"
+                        },
+                        {
+                          "text": "5. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Document Automation\"\n"
+                        },
+                        {
+                          "text": "6. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Activity\"\n"
+                        },
+                        {
+                          "text": "7. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"In progress\"\n"
+                        },
+                        {
+                          "text": "8. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Historical\"\n"
+                        },
+                        {
+                          "text": "9. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--is_external pathfinder-items__item-button--size_wide]: \"Insights\"\n"
+                        },
+                        {
+                          "text": "10. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Manage\"\n"
+                        },
+                        {
+                          "text": "11. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Devices\"\n"
+                        },
+                        {
+                          "text": "12. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Global values\"\n"
+                        },
+                        {
+                          "text": "13. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Credentials\"\n"
+                        },
+                        {
+                          "text": "14. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Packages\"\n"
+                        },
+                        {
+                          "text": "15. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Administration\"\n"
+                        },
+                        {
+                          "text": "16. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: \"Users\"\n"
+                        },
+                        {
+                          "text": "17. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_user g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide pathfinder-items__item-button--variant_primary]: \"KCkashyapsatwik29@gmail.com\"\n"
+                        },
+                        {
+                          "text": "18. BUTTON [pathfinder-tray-expander g-reset-element g-focus g-focus--extend_4px g-focus--variant_light]: \"\"\n"
+                        },
+                        {
+                          "text": "19. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_tray g-override pathfinder-items__item-button--size_wide]: \"\"\n"
+                        },
+                        {
+                          "text": "20. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_tray g-override pathfinder-items__item--variant_tray-button--status_warning pathfinder-items__item-button--size_wide]: \"\"\n"
+                        },
+                        {
+                          "text": "21. A [main-layout-upgrade-banner__link]: \"Upgrade to Enterprise\"\n"
+                        },
+                        {
+                          "text": "22. A [rio-link rio-link--is_interactive]: \"Learn more\"\n"
+                        },
+                        {
+                          "text": "23. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: \"Create a bot…\"\n"
+                        },
+                        {
+                          "text": "24. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: \"Open Document Automation\"\n"
+                        },
+                        {
+                          "text": "25. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: \"Open Bot Insight\"\n"
+                        },
+                        {
+                          "text": "26. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: \"Open Automation Co-Pilot\"\n"
+                        },
+                        {
+                          "text": "\n=== Looking for key elements ===\n"
+                        },
+                        {
+                          "text": "✓ \"text=Automation\" - VISIBLE\n"
+                        },
+                        {
+                          "text": "✓ \"text=Create\" - VISIBLE\n"
+                        },
+                        {
+                          "text": "✓ \"text=Task Bot\" - NOT VISIBLE\n"
+                        },
+                        {
+                          "text": "✓ \"[data-testid=\"automation\"]\" - NOT VISIBLE\n"
+                        },
+                        {
+                          "text": "✓ \".menu-item\" - NOT VISIBLE\n"
+                        },
+                        {
+                          "text": "✓ \".navigation\" - NOT VISIBLE\n"
+                        },
+                        {
+                          "text": "✓ \".sidebar\" - NOT VISIBLE\n"
+                        },
+                        {
+                          "text": "\n=== Test paused for manual inspection ===\n"
+                        },
+                        {
+                          "text": "Press Resume button in Playwright Inspector to continue...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-16T18:06:45.779Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4d7e22decea49fb11062-f838a14aad6a42b38e8f",
+              "file": "debug.test.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "Test API authentication directly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3831,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Testing API authentication...\n"
+                        },
+                        {
+                          "text": "Base URL: https://community.cloud.automationanywhere.digital\n"
+                        },
+                        {
+                          "text": "Username: kashyapsatwik29@gmail.com\n"
+                        },
+                        {
+                          "text": "\nTrying endpoint: /v1/authentication\n"
+                        },
+                        {
+                          "text": "Status: 404\n"
+                        },
+                        {
+                          "text": "Response text: Not found\n"
+                        },
+                        {
+                          "text": "\nTrying endpoint: /api/v1/authentication\n"
+                        },
+                        {
+                          "text": "Status: 401\n"
+                        },
+                        {
+                          "text": "Response body: {\n  \"code\": \"UM1117\",\n  \"details\": null,\n  \"message\": \"Access token expected in the 'X-Authorization' header\"\n}\n"
+                        },
+                        {
+                          "text": "\nTrying endpoint: /api/login\n"
+                        },
+                        {
+                          "text": "Status: 401\n"
+                        },
+                        {
+                          "text": "Response body: {\n  \"code\": \"UM1117\",\n  \"details\": null,\n  \"message\": \"Access token expected in the 'X-Authorization' header\"\n}\n"
+                        },
+                        {
+                          "text": "\nTrying endpoint: /api/auth/login\n"
+                        },
+                        {
+                          "text": "Status: 401\n"
+                        },
+                        {
+                          "text": "Response body: {\n  \"code\": \"UM1117\",\n  \"details\": null,\n  \"message\": \"Access token expected in the 'X-Authorization' header\"\n}\n"
+                        },
+                        {
+                          "text": "\nTrying endpoint: /authentication\n"
+                        },
+                        {
+                          "text": "Status: 401\n"
+                        },
+                        {
+                          "text": "Response body: {\n  \"code\": \"UM1117\",\n  \"details\": null,\n  \"message\": \"Access token expected in the 'X-Authorization' header\"\n}\n"
+                        },
+                        {
+                          "text": "\nTrying endpoint: /login\n"
+                        },
+                        {
+                          "text": "Status: 401\n"
+                        },
+                        {
+                          "text": "Response body: {\n  \"code\": \"UM1117\",\n  \"details\": null,\n  \"message\": \"Access token expected in the 'X-Authorization' header\"\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-16T18:07:20.156Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4d7e22decea49fb11062-5ab046ca213b89b490ae",
+              "file": "debug.test.ts",
+              "line": 158,
+              "column": 7
+            },
+            {
+              "title": "Check environment variables",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "\n=== Environment Variables ===\n"
+                        },
+                        {
+                          "text": "BASE_URL: https://community.cloud.automationanywhere.digital\n"
+                        },
+                        {
+                          "text": "API_BASE_URL: https://community.cloud.automationanywhere.digital\n"
+                        },
+                        {
+                          "text": "TEST_USERNAME: ***SET***\n"
+                        },
+                        {
+                          "text": "TEST_PASSWORD: ***SET***\n"
+                        },
+                        {
+                          "text": "HEADLESS: false\n"
+                        },
+                        {
+                          "text": "CI: false\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-16T18:07:24.001Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4d7e22decea49fb11062-875a7cf9d62380c8bd74",
+              "file": "debug.test.ts",
+              "line": 215,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "formUpload.test.ts",
+      "file": "formUpload.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Create Form With Upload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 29937,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=sample.pdf')\nExpected: visible\nError: strict mode violation: locator('text=sample.pdf') resolved to 2 elements:\n    1) <span class=\"file-input__description-file\">sample.pdf</span> aka getByText('sample.pdf').first()\n    2) <span class=\"clipped-text__string clipped-text__string--for_presentation\">sample.pdf</span> aka getByText('sample.pdf').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=sample.pdf')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=sample.pdf')\nExpected: visible\nError: strict mode violation: locator('text=sample.pdf') resolved to 2 elements:\n    1) <span class=\"file-input__description-file\">sample.pdf</span> aka getByText('sample.pdf').first()\n    2) <span class=\"clipped-text__string clipped-text__string--for_presentation\">sample.pdf</span> aka getByText('sample.pdf').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=sample.pdf')\u001b[22m\n\n    at /Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts:28:49",
+                    "location": {
+                      "file": "/Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts",
+                      "column": 49,
+                      "line": 28
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[90m// Assert file uploaded\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=sample.pdf'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts",
+                        "column": 49,
+                        "line": 28
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=sample.pdf')\nExpected: visible\nError: strict mode violation: locator('text=sample.pdf') resolved to 2 elements:\n    1) <span class=\"file-input__description-file\">sample.pdf</span> aka getByText('sample.pdf').first()\n    2) <span class=\"clipped-text__string clipped-text__string--for_presentation\">sample.pdf</span> aka getByText('sample.pdf').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=sample.pdf')\u001b[22m\n\n\n\u001b[0m \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[90m// Assert file uploaded\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=sample.pdf'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts:28:49\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-12-16T18:07:24.018Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts",
+                    "column": 49,
+                    "line": 28
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 44323,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=sample.pdf')\nExpected: visible\nError: strict mode violation: locator('text=sample.pdf') resolved to 2 elements:\n    1) <span class=\"file-input__description-file\">sample.pdf</span> aka getByText('sample.pdf').first()\n    2) <span class=\"clipped-text__string clipped-text__string--for_presentation\">sample.pdf</span> aka getByText('sample.pdf').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=sample.pdf')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=sample.pdf')\nExpected: visible\nError: strict mode violation: locator('text=sample.pdf') resolved to 2 elements:\n    1) <span class=\"file-input__description-file\">sample.pdf</span> aka getByText('sample.pdf').first()\n    2) <span class=\"clipped-text__string clipped-text__string--for_presentation\">sample.pdf</span> aka getByText('sample.pdf').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=sample.pdf')\u001b[22m\n\n    at /Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts:28:49",
+                    "location": {
+                      "file": "/Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts",
+                      "column": 49,
+                      "line": 28
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[90m// Assert file uploaded\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=sample.pdf'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts",
+                        "column": 49,
+                        "line": 28
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=sample.pdf')\nExpected: visible\nError: strict mode violation: locator('text=sample.pdf') resolved to 2 elements:\n    1) <span class=\"file-input__description-file\">sample.pdf</span> aka getByText('sample.pdf').first()\n    2) <span class=\"clipped-text__string clipped-text__string--for_presentation\">sample.pdf</span> aka getByText('sample.pdf').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=sample.pdf')\u001b[22m\n\n\n\u001b[0m \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m   \u001b[90m// Assert file uploaded\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=sample.pdf'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\u001b[0m\n\u001b[2m    at /Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts:28:49\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-12-16T18:07:54.860Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium-retry1/video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/formUpload-Create-Form-With-Upload-chromium-retry1/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/1byinf8/BOOM/automation-assignment/tests/formUpload.test.ts",
+                    "column": 49,
+                    "line": 28
+                  }
+                },
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 39724,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 2,
+                  "startTime": "2025-12-16T18:08:40.718Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "03940709b16e8e875e09-b865d00a0d78b4799716",
+          "file": "formUpload.test.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "messageBox.spec.ts",
+      "file": "messageBox.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Message Box Task Creation",
+          "file": "messageBox.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should create a message box task successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "interrupted",
+                      "duration": 61804,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Automation', { exact: true })\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 60000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Automation', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Automation', { exact: true })\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 60000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Automation', { exact: true })\u001b[22m\n\n    at DashboardPage.goToAutomation (/Users/1byinf8/BOOM/automation-assignment/pages/DashboardPage.ts:18:30)\n    at /Users/1byinf8/BOOM/automation-assignment/tests/messageBox.spec.ts:18:27\n    at /Users/1byinf8/BOOM/automation-assignment/tests/messageBox.spec.ts:17:16",
+                        "location": {
+                          "file": "/Users/1byinf8/BOOM/automation-assignment/pages/DashboardPage.ts",
+                          "column": 30,
+                          "line": 18
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m../pages/DashboardPage.ts:18\n\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mconst\u001b[39m automation \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetAutomationElement()\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m expect(automation)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m automation\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/bots\\/repository/\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/1byinf8/BOOM/automation-assignment/pages/DashboardPage.ts",
+                            "column": 30,
+                            "line": 18
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Automation', { exact: true })\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 60000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Automation', { exact: true })\u001b[22m\n\n\n\u001b[90m   at \u001b[39m../pages/DashboardPage.ts:18\n\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mconst\u001b[39m automation \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetAutomationElement()\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m expect(automation)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m automation\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/bots\\/repository/\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at DashboardPage.goToAutomation (/Users/1byinf8/BOOM/automation-assignment/pages/DashboardPage.ts:18:30)\u001b[22m\n\u001b[2m    at /Users/1byinf8/BOOM/automation-assignment/tests/messageBox.spec.ts:18:27\u001b[22m\n\u001b[2m    at /Users/1byinf8/BOOM/automation-assignment/tests/messageBox.spec.ts:17:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to Automation section",
+                          "duration": 58511,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Automation', { exact: true })\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 60000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Automation', { exact: true })\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Automation', { exact: true })\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 60000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Automation', { exact: true })\u001b[22m\n\n    at DashboardPage.goToAutomation (/Users/1byinf8/BOOM/automation-assignment/pages/DashboardPage.ts:18:30)\n    at /Users/1byinf8/BOOM/automation-assignment/tests/messageBox.spec.ts:18:27\n    at /Users/1byinf8/BOOM/automation-assignment/tests/messageBox.spec.ts:17:16",
+                            "location": {
+                              "file": "/Users/1byinf8/BOOM/automation-assignment/pages/DashboardPage.ts",
+                              "column": 30,
+                              "line": 18
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m../pages/DashboardPage.ts:18\n\n\u001b[0m \u001b[90m 16 |\u001b[39m     \u001b[36mconst\u001b[39m automation \u001b[33m=\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mgetAutomationElement()\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 18 |\u001b[39m     \u001b[36mawait\u001b[39m expect(automation)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m60000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m automation\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/bots\\/repository/\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                          }
+                        }
+                      ],
+                      "startTime": "2025-12-16T18:09:21.016Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/messageBox-Message-Box-Tas-8889e-ssage-box-task-successfully-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/messageBox-Message-Box-Tas-8889e-ssage-box-task-successfully-chromium/video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/1byinf8/BOOM/automation-assignment/test-results/messageBox-Message-Box-Tas-8889e-ssage-box-task-successfully-chromium/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/1byinf8/BOOM/automation-assignment/pages/DashboardPage.ts",
+                        "column": 30,
+                        "line": 18
+                      }
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "05df737c34c9dba26b4c-62be12e91f7d2f2bcc57",
+              "file": "messageBox.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "should validate required fields",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "05df737c34c9dba26b4c-f2677d529718662886c3",
+              "file": "messageBox.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "should handle message box search",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "05df737c34c9dba26b4c-35f48f6caa51938cc8e6",
+              "file": "messageBox.spec.ts",
+              "line": 55,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Message Box Task - Error Scenarios",
+          "file": "messageBox.spec.ts",
+          "line": 70,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should handle network errors gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "05df737c34c9dba26b4c-326993a81d3f9a1a7209",
+              "file": "messageBox.spec.ts",
+              "line": 73,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "simple-navigation.spec.ts",
+      "file": "simple-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Basic Navigation Tests",
+          "file": "simple-navigation.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate to Automation section",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "e93ca89837a62b686717-fd72e24e0ec8ba5475fa",
+              "file": "simple-navigation.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-16T18:06:45.252Z",
+    "duration": 217677.529,
+    "expected": 3,
+    "skipped": 5,
+    "unexpected": 0,
+    "flaky": 1
+  }
+}

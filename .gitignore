@@ -2,13 +2,6 @@
 node_modules/
 package-lock.json
 
-# Test results
-test-results/
-playwright-report/
-screenshots/
-test-data/
-allure-results/
-allure-report/
 
 # Environment variables
 .env

@@ -1,0 +1,189 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner
+  - generic [ref=e5]:
+    - navigation [ref=e7]:
+      - img "Community Edition"
+      - img "Community Edition"
+      - img "Community Edition"
+      - navigation [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "Explore" [ref=e11] [cursor=pointer]:
+              - /url: "#/home"
+              - generic "Explore" [ref=e14]: 
+              - generic [ref=e15]: Explore
+          - listitem [ref=e16]:
+            - link "Home" [ref=e17] [cursor=pointer]:
+              - /url: "#/dashboard"
+              - generic "Home" [ref=e20]: 
+              - generic [ref=e21]: Home
+          - listitem [ref=e22]:
+            - link "Automation" [ref=e23] [cursor=pointer]:
+              - /url: "#/bots/repository"
+              - generic "Automation" [ref=e26]: 
+              - generic [ref=e27]: Automation
+          - listitem [ref=e28]:
+            - button "AI" [ref=e29] [cursor=pointer]:
+              - generic [ref=e32]: 
+              - generic [ref=e34]: 
+              - generic [ref=e35]: AI
+            - list:
+              - listitem [ref=e36]:
+                - link "Document Automation" [ref=e37] [cursor=pointer]:
+                  - /url: "#/modules/cognitive/iqbot/pages/learning-instances"
+                  - generic [ref=e39]: Document Automation
+          - listitem [ref=e40]:
+            - button "Activity" [ref=e41] [cursor=pointer]:
+              - generic [ref=e44]: 
+              - generic "Activity" [ref=e46]: 
+              - generic [ref=e47]: Activity
+            - list:
+              - listitem [ref=e48]:
+                - link "In progress" [ref=e49] [cursor=pointer]:
+                  - /url: "#/activity/inprogress"
+                  - generic [ref=e51]: In progress
+              - listitem [ref=e52]:
+                - link "Historical" [ref=e53] [cursor=pointer]:
+                  - /url: "#/activity/historical"
+                  - generic [ref=e55]: Historical
+              - listitem [ref=e56]
+              - listitem [ref=e57]:
+                - link "Insights" [ref=e58] [cursor=pointer]:
+                  - /url: /botinsight/
+                  - generic [ref=e60]: Insights
+                  - generic "Open in new window" [ref=e61]: 
+          - listitem [ref=e62]:
+            - button "Manage" [ref=e63] [cursor=pointer]:
+              - generic [ref=e66]: 
+              - generic "Manage" [ref=e68]: 
+              - generic [ref=e69]: Manage
+            - list:
+              - listitem [ref=e70]:
+                - link "Devices" [ref=e71] [cursor=pointer]:
+                  - /url: "#/devices/mydevices"
+                  - generic [ref=e73]: Devices
+              - listitem [ref=e74]
+              - listitem [ref=e75]:
+                - link "Global values" [ref=e76] [cursor=pointer]:
+                  - /url: "#/bots/globalvalues"
+                  - generic [ref=e78]: Global values
+              - listitem [ref=e79]:
+                - link "Credentials" [ref=e80] [cursor=pointer]:
+                  - /url: "#/bots/credentials"
+                  - generic [ref=e82]: Credentials
+              - listitem [ref=e83]:
+                - link "Packages" [ref=e84] [cursor=pointer]:
+                  - /url: "#/bots/packages"
+                  - generic [ref=e86]: Packages
+          - listitem [ref=e87]:
+            - button "Administration" [ref=e88] [cursor=pointer]:
+              - generic [ref=e91]: 
+              - generic "Administration" [ref=e93]: 
+              - generic [ref=e94]: Administration
+            - list:
+              - listitem [ref=e95]:
+                - link "Users" [ref=e96] [cursor=pointer]:
+                  - /url: "#/admin/users"
+                  - generic [ref=e98]: Users
+      - navigation [ref=e99]:
+        - button "KC kashyapsatwik29@gmail.com" [ref=e102] [cursor=pointer]:
+          - generic [ref=e106]: KC
+          - generic [ref=e107]: kashyapsatwik29@gmail.com
+        - generic [ref=e108]:
+          - button "Collapse" [expanded] [ref=e109] [cursor=pointer]
+          - button "" [ref=e111] [cursor=pointer]:
+            - generic [ref=e112]:
+              - generic "Help center": 
+          - button "Device Settings" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]:
+              - img "Device Settings":
+                - generic: 
+                - generic:
+                  - generic:
+                    - img
+    - generic [ref=e116]:
+      - banner [ref=e117]:
+        - generic [ref=e118]:
+          - generic [ref=e120]: 
+          - generic [ref=e121]:
+            - link "Upgrade to Enterprise" [ref=e122] [cursor=pointer]:
+              - /url: https://info.automationanywhere.com/community-edition-upgrade.html
+            - generic "Open in new window" [ref=e123]: 
+            - text: Advanced automation capabilities to unleash your organization’s full potential.
+          - generic [ref=e125] [cursor=pointer]: 
+      - main [ref=e129]:
+        - heading "Upload files" [level=1] [ref=e131]:
+          - heading "Upload files" [level=1] [ref=e132]
+          - generic [ref=e134]:
+            - button "Cancel" [ref=e137] [cursor=pointer]:
+              - generic [ref=e139]: Cancel
+            - button "Upload" [ref=e142]:
+              - generic [ref=e144]: Upload
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - button "Upload to" [ref=e149] [cursor=pointer]:
+                - generic "Upload to" [ref=e150]: Upload to
+              - button " Files 1 files selected" [ref=e153]:
+                - generic "Files" [ref=e154]:
+                  - generic [ref=e157]: 
+                  - text: Files
+                - generic "1 files selected" [ref=e159]
+            - main [ref=e161]:
+              - heading "Choose files to upload" [level=2] [ref=e163]:
+                - generic [ref=e164]:
+                  - generic [ref=e166]: Choose files to upload
+                  - generic [ref=e168]:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - button:
+                              - generic: 
+              - generic [ref=e169]:
+                - generic [ref=e171]: Files will be uploaded into the folder that you had selected on the previous page.
+                - generic [ref=e173]:
+                  - generic [ref=e174]:
+                    - generic [ref=e177]: Add files to upload
+                    - generic [ref=e179]:
+                      - generic "sample.pdf" [ref=e180]:
+                        - region "Keyboard focus boundary"
+                        - button "Keyboard focus boundary sample.pdf"
+                        - generic [ref=e183]: sample.pdf
+                      - button "Add files…" [ref=e186] [cursor=pointer]:
+                        - generic [ref=e188]: Add files…
+                  - region "Files" [ref=e189]:
+                    - generic [ref=e190]:
+                      - generic [ref=e192]: Files
+                      - generic [ref=e194]: (1)
+                      - region "Keyboard focus boundary"
+                      - button "Remove checked items…" [ref=e195] [cursor=pointer]:
+                        - generic [ref=e196]: 
+                  - generic [ref=e197]:
+                    - generic [ref=e199]:
+                      - generic [ref=e204] [cursor=pointer]:
+                        - region "Keyboard focus boundary"
+                        - checkbox "Check all":
+                          - checkbox "Check all"
+                      - generic [ref=e210]: Type
+                      - generic [ref=e216]: Name
+                      - generic [ref=e222]: Size
+                      - generic [ref=e228]: Last modified
+                    - generic [ref=e234]:
+                      - generic [ref=e238] [cursor=pointer]:
+                        - region "Keyboard focus boundary"
+                        - checkbox "Keyboard focus boundary":
+                          - checkbox "Keyboard focus boundary"
+                      - generic [ref=e242]: application/pdf
+                      - generic [ref=e246]: sample.pdf
+                      - generic [ref=e250]: 0 Bytes
+                      - generic "22:58:38 IST 2025-12-16" [ref=e253]: 40 minutes ago
+                      - button "Actions" [ref=e255] [cursor=pointer]:
+                        - generic [ref=e256]: 
+          - button " Back" [ref=e258] [cursor=pointer]:
+            - generic [ref=e259]: 
+            - text: Back
+```

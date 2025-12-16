@@ -1,0 +1,169 @@
+<testsuites id="" name="" tests="9" failures="0" skipped="5" errors="0" time="217.67752900000002">
+<testsuite name="debug.test.ts" timestamp="2025-12-16T18:06:45.283Z" hostname="chromium" tests="3" failures="0" skipped="0" time="37.718" errors="0">
+<testcase name="Debug Tests › Inspect page after login" classname="debug.test.ts" time="33.883">
+<system-out>
+<![CDATA[Starting debug test...
+Current URL: https://community.cloud.automationanywhere.digital/#/login?next=/index
+Attempting login with username: kashyapsatwik29@gmail.com
+Username filled with selector: input[name="username"]
+Password filled with selector: input[name="password"]
+Login button clicked with selector: button[type="submit"]
+URL after login: https://community.cloud.automationanywhere.digital/#/home
+
+=== Clickable Elements ===
+Found 26 clickable elements
+1. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide pathfinder-items__item-button--is_current pathfinder-button--is_selected]: "Explore"
+2. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Home"
+3. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Automation"
+4. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "AI"
+5. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Document Automation"
+6. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Activity"
+7. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "In progress"
+8. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Historical"
+9. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--is_external pathfinder-items__item-button--size_wide]: "Insights"
+10. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Manage"
+11. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Devices"
+12. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Global values"
+13. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Credentials"
+14. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Packages"
+15. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_primary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Administration"
+16. A [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button--variant_secondary g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide]: "Users"
+17. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_user g-focus--shrink_4px g-override pathfinder-items__item-button--size_wide pathfinder-items__item-button--variant_primary]: "KCkashyapsatwik29@gmail.com"
+18. BUTTON [pathfinder-tray-expander g-reset-element g-focus g-focus--extend_4px g-focus--variant_light]: ""
+19. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_tray g-override pathfinder-items__item-button--size_wide]: ""
+20. BUTTON [pathfinder-button g-box-sizing_border-box g-reset-element g-focus g-focus--variant_light pathfinder-items__item-button pathfinder-items__item-button--variant_tray g-override pathfinder-items__item--variant_tray-button--status_warning pathfinder-items__item-button--size_wide]: ""
+21. A [main-layout-upgrade-banner__link]: "Upgrade to Enterprise"
+22. A [rio-link rio-link--is_interactive]: "Learn more"
+23. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: "Create a bot…"
+24. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: "Open Document Automation"
+25. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: "Open Bot Insight"
+26. BUTTON [rio-focus rio-focus--inset_negative-2px rio-focus--border-radius_4px rio-focus--has_element-focus-visible command-button__button command-button__button--primary g-reset-element command-button__button--is_clickable command-button__button--is_solid]: "Open Automation Co-Pilot"
+
+=== Looking for key elements ===
+✓ "text=Automation" - VISIBLE
+✓ "text=Create" - VISIBLE
+✓ "text=Task Bot" - NOT VISIBLE
+✓ "[data-testid="automation"]" - NOT VISIBLE
+✓ ".menu-item" - NOT VISIBLE
+✓ ".navigation" - NOT VISIBLE
+✓ ".sidebar" - NOT VISIBLE
+
+=== Test paused for manual inspection ===
+Press Resume button in Playwright Inspector to continue...
+]]>
+</system-out>
+</testcase>
+<testcase name="Debug Tests › Test API authentication directly" classname="debug.test.ts" time="3.831">
+<system-out>
+<![CDATA[Testing API authentication...
+Base URL: https://community.cloud.automationanywhere.digital
+Username: kashyapsatwik29@gmail.com
+
+Trying endpoint: /v1/authentication
+Status: 404
+Response text: Not found
+
+Trying endpoint: /api/v1/authentication
+Status: 401
+Response body: {
+  "code": "UM1117",
+  "details": null,
+  "message": "Access token expected in the 'X-Authorization' header"
+}
+
+Trying endpoint: /api/login
+Status: 401
+Response body: {
+  "code": "UM1117",
+  "details": null,
+  "message": "Access token expected in the 'X-Authorization' header"
+}
+
+Trying endpoint: /api/auth/login
+Status: 401
+Response body: {
+  "code": "UM1117",
+  "details": null,
+  "message": "Access token expected in the 'X-Authorization' header"
+}
+
+Trying endpoint: /authentication
+Status: 401
+Response body: {
+  "code": "UM1117",
+  "details": null,
+  "message": "Access token expected in the 'X-Authorization' header"
+}
+
+Trying endpoint: /login
+Status: 401
+Response body: {
+  "code": "UM1117",
+  "details": null,
+  "message": "Access token expected in the 'X-Authorization' header"
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Debug Tests › Check environment variables" classname="debug.test.ts" time="0.004">
+<system-out>
+<![CDATA[
+=== Environment Variables ===
+BASE_URL: https://community.cloud.automationanywhere.digital
+API_BASE_URL: https://community.cloud.automationanywhere.digital
+TEST_USERNAME: ***SET***
+TEST_PASSWORD: ***SET***
+HEADLESS: false
+CI: false
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="formUpload.test.ts" timestamp="2025-12-16T18:06:45.283Z" hostname="chromium" tests="1" failures="0" skipped="0" time="113.984" errors="0">
+<testcase name="Create Form With Upload" classname="formUpload.test.ts" time="113.984">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium/video.webm]]
+
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium/error-context.md]]
+
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium/trace.zip]]
+
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|formUpload-Create-Form-With-Upload-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="messageBox.spec.ts" timestamp="2025-12-16T18:06:45.283Z" hostname="chromium" tests="4" failures="0" skipped="4" time="61.804" errors="0">
+<testcase name="Message Box Task Creation › should create a message box task successfully" classname="messageBox.spec.ts" time="61.804">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Message Box Task Creation › should validate required fields" classname="messageBox.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Message Box Task Creation › should handle message box search" classname="messageBox.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Message Box Task - Error Scenarios › should handle network errors gracefully" classname="messageBox.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="simple-navigation.spec.ts" timestamp="2025-12-16T18:06:45.283Z" hostname="chromium" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="Basic Navigation Tests › should navigate to Automation section" classname="simple-navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
