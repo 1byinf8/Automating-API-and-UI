@@ -15,31 +15,26 @@ type TestFixtures = {
 };
 
 export const test = base.extend<TestFixtures>({
-  // Login Page fixture
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
     await use(loginPage);
   },
 
-  // Dashboard Page fixture
   dashboardPage: async ({ page }, use) => {
     const dashboardPage = new DashboardPage(page);
     await use(dashboardPage);
   },
 
-  // TaskBot Page fixture
   taskBotPage: async ({ page }, use) => {
     const taskBotPage = new TaskBotPage(page);
     await use(taskBotPage);
   },
 
-  // FormBuilder Page fixture
   formBuilderPage: async ({ page }, use) => {
     const formBuilderPage = new FormBuilderPage(page);
     await use(formBuilderPage);
   },
 
-  // API Client fixture
   apiClient: async ({}, use) => {
     const client = new ApiClient();
     await client.init();
@@ -47,7 +42,6 @@ export const test = base.extend<TestFixtures>({
     await client.dispose();
   },
 
-  // Authenticated page fixture - auto-login before each test
   authenticatedPage: async ({ loginPage }, use) => {
     await loginPage.goto();
     await loginPage.loginWithValidation(
